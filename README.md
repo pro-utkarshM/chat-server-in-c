@@ -2,12 +2,13 @@
 
 ## Description
 
-This project is a simple chat server implemented in C. It allows multiple clients to connect and communicate with each other through a central server. The server manages client connections and broadcasts messages to all connected clients.
+This project is a simple chat server implemented in C. It allows multiple clients to connect and communicate with each other through a central server. The server manages client connections, chat rooms, and private messages.
 
 ## Features
 
 - Supports multiple client connections
-- Broadcasts messages to all connected clients
+- Chat rooms
+- Private messaging
 - Simple command-line interface
 - Efficient handling of client connections
 
@@ -21,14 +22,9 @@ To compile and run the chat server, follow these steps:
     cd chat-server-in-c
     ```
 
-2. Compile the server:
+2. Compile the server and client:
     ```sh
-    gcc -o chat_server chat_server.c
-    ```
-
-3. Compile the client:
-    ```sh
-    gcc -o chat_client chat_client.c
+    make
     ```
 
 ## Usage
@@ -37,7 +33,7 @@ To compile and run the chat server, follow these steps:
 
 To start the chat server, run:
 ```sh
-./chat_server <port>
+./chat-server <port>
 ```
 Replace `<port>` with the port number you want the server to listen on.
 
@@ -45,9 +41,17 @@ Replace `<port>` with the port number you want the server to listen on.
 
 To connect to the server as a client, run:
 ```sh
-./chat_client <server_ip> <port>
+./chat-client <server_ip> <port>
 ```
 Replace `<server_ip>` with the IP address of the server and `<port>` with the port number the server is listening on.
+
+## Commands
+
+- `/create <room_name>`: Creates a new chat room.
+- `/join <room_name>`: Joins an existing chat room.
+- `/leave`: Leaves the current chat room.
+- `/list`: Lists all users in the current chat room.
+- `/msg <username> <message>`: Sends a private message to the specified user.
 
 ## Contributing
 
